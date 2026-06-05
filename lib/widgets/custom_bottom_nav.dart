@@ -19,7 +19,7 @@ class CustomBottomNav extends StatelessWidget {
         color: AppTheme.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, -5),
           ),
@@ -31,9 +31,8 @@ class CustomBottomNav extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _buildNavItem(0, 'Weather', Icons.cloud_outlined),
-            _buildNavItem(1, 'Hourly', Icons.access_time),
-            _buildNavItem(2, 'Daily', Icons.calendar_today_outlined),
-            _buildNavItem(3, 'Radar', Icons.radar),
+            _buildNavItem(1, 'Timing', Icons.watch_later_outlined),
+            _buildNavItem(2, 'Hourly', Icons.access_time),
           ],
         ),
       ),

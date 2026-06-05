@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/custom_bottom_nav.dart';
 import 'home_screen.dart';
 import 'hourly_screen.dart';
-import 'daily_screen.dart';
-import 'radar_screen.dart';
+import 'timing_screen.dart';
 import '../theme/app_theme.dart';
 import '../services/weather_service.dart';
 
@@ -75,19 +74,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         forecastData: _forecastData,
         isLoading: _isLoading,
       ),
+      const TimingScreen(),
       HourlyScreen(
         city: _city,
         onSearch: _onCitySearched,
         forecastData: _forecastData,
         isLoading: _isLoading,
       ),
-      DailyScreen(
-        city: _city,
-        onSearch: _onCitySearched,
-        forecastData: _forecastData,
-        isLoading: _isLoading,
-      ),
-      RadarScreen(city: _city, onSearch: _onCitySearched),
     ];
 
     return Scaffold(

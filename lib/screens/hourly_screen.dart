@@ -80,7 +80,9 @@ class _HourlyScreenState extends State<HourlyScreen> {
     final groupedForecasts = _getGroupedForecasts();
     
     return Container(
-      color: AppTheme.white,
+      decoration: const BoxDecoration(
+        gradient: AppTheme.dashboardGradient,
+      ),
       child: SafeArea(
         child: widget.isLoading
             ? const Center(child: CircularProgressIndicator())

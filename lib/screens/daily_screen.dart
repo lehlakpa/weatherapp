@@ -239,7 +239,7 @@ class DailyScreen extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: AppTheme.primaryBlue.withOpacity(0.1),
+          color: AppTheme.primaryBlue.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'screens/main_navigation_screen.dart';
+//import 'package:flutterxlearn/screens/realproject.dart';
 import 'theme/app_theme.dart';
+import './screens/annimation.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Weather App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
-      home: const MainNavigationScreen(),
+      home: AnimatedFirebaseText(),
     );
   }
 }
