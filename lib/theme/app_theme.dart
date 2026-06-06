@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'app_colors.dart';
 
 class AppTheme {
-  static const Color primaryBlue = Color(0xFF1E88E5); // Adjust based on design
-  static const Color backgroundBlue = Color(0xFFE3F2FD);
-  static const Color darkText = Color(0xFF1A1A1A);
-  static const Color lightText = Color(0xFF757575);
-  static const Color white = Colors.white;
+  static const Color primaryBlue = AppColors.primaryBlue;
+  static const Color backgroundBlue = AppColors.backgroundBlue;
+  static const Color darkText = AppColors.darkText;
+  static const Color lightText = AppColors.lightText;
+  static const Color white = AppColors.white;
 
   static const LinearGradient dashboardGradient = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [
-      Color(0xFFD6E8FF),
-      Color(0xFFF3F8FF),
-    ],
+    colors: AppColors.dashboardGradient,
   );
 
   static ThemeData get themeData {
     return ThemeData(
+      useMaterial3: true,
       primaryColor: primaryBlue,
-      scaffoldBackgroundColor: white, // Most screens are white
+      scaffoldBackgroundColor: white,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: primaryBlue,
+        primary: primaryBlue,
+        error: AppColors.error,
+        background: white,
+      ),
       textTheme: GoogleFonts.interTextTheme().copyWith(
         displayLarge: GoogleFonts.inter(
           fontSize: 64,

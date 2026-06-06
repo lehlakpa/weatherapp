@@ -5,6 +5,7 @@ import 'hourly_screen.dart';
 import 'timing_screen.dart';
 import '../theme/app_theme.dart';
 import '../services/weather_service.dart';
+import '../services/error_handler.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -47,12 +48,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         _isLoading = false;
       });
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Failed to load data for $_city')),
-        );
+        ErrorHandler.showErrorNotification(context, e);
       }
     }
   }
+
 
   void _onCitySearched(String newCity) {
     if (newCity.isNotEmpty) {
