@@ -24,7 +24,7 @@ class AppTheme {
         seedColor: primaryBlue,
         primary: primaryBlue,
         error: AppColors.error,
-        background: white,
+        surface: white,
       ),
       textTheme: GoogleFonts.interTextTheme().copyWith(
         displayLarge: GoogleFonts.inter(

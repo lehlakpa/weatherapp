@@ -1,4 +1,4 @@
-import 'dart:async';
+import 'dart:async' as async_lib;
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -20,7 +20,7 @@ class ErrorHandler {
       return ConnectionException();
     }
 
-    if (error is TimeoutException) {
+    if (error is async_lib.TimeoutException) {
       return TimeoutException();
     }
 
@@ -30,13 +30,15 @@ class ErrorHandler {
 
     // Match string patterns for other network error cases
     final errorStr = error.toString().toLowerCase();
-    if (errorStr.contains('socketexception') || errorStr.contains('failed host lookup')) {
+    if (errorStr.contains('socketexception') ||
+        errorStr.contains('failed host lookup')) {
       return ConnectionException();
     }
     if (errorStr.contains('timeout')) {
       return TimeoutException();
     }
-    if (errorStr.contains('formatexception') || errorStr.contains('unexpected character')) {
+    if (errorStr.contains('formatexception') ||
+        errorStr.contains('unexpected character')) {
       return ParsingException();
     }
 

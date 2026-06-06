@@ -53,7 +53,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     }
   }
 
-
   void _onCitySearched(String newCity) {
     if (newCity.isNotEmpty) {
       setState(() {

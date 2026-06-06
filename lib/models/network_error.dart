@@ -24,36 +24,36 @@ abstract class NetworkException implements Exception {
 }
 
 class ConnectionException extends NetworkException {
-  ConnectionException({String message = 'No internet connection. Please check your network.'})
-      : super(message: message, type: NetworkErrorType.connection);
+  ConnectionException({super.message = 'No internet connection. Please check your network.'})
+      : super(type: NetworkErrorType.connection);
 }
 
 class TimeoutException extends NetworkException {
-  TimeoutException({String message = 'Connection timed out. Please try again.'})
-      : super(message: message, type: NetworkErrorType.timeout);
+  TimeoutException({super.message = 'Connection timed out. Please try again.'})
+      : super(type: NetworkErrorType.timeout);
 }
 
 class UnauthorizedException extends NetworkException {
-  UnauthorizedException({String message = 'Invalid API key or unauthorized request. Please check your credentials.', int? statusCode})
-      : super(message: message, type: NetworkErrorType.unauthorized, statusCode: statusCode);
+  UnauthorizedException({super.message = 'Invalid API key or unauthorized request. Please check your credentials.', super.statusCode})
+      : super(type: NetworkErrorType.unauthorized);
 }
 
 class NotFoundException extends NetworkException {
-  NotFoundException({String message = 'Requested resource or city could not be found.', int? statusCode})
-      : super(message: message, type: NetworkErrorType.notFound, statusCode: statusCode);
+  NotFoundException({super.message = 'Requested resource or city could not be found.', super.statusCode})
+      : super(type: NetworkErrorType.notFound);
 }
 
 class ServerException extends NetworkException {
-  ServerException({String message = 'Internal server error. Please try again later.', int? statusCode})
-      : super(message: message, type: NetworkErrorType.server, statusCode: statusCode);
+  ServerException({super.message = 'Internal server error. Please try again later.', super.statusCode})
+      : super(type: NetworkErrorType.server);
 }
 
 class ParsingException extends NetworkException {
-  ParsingException({String message = 'Failed to process data format from the server.'})
-      : super(message: message, type: NetworkErrorType.parsing);
+  ParsingException({super.message = 'Failed to process data format from the server.'})
+      : super(type: NetworkErrorType.parsing);
 }
 
 class UnknownException extends NetworkException {
-  UnknownException({String message = 'An unexpected error occurred. Please try again.', int? statusCode})
-      : super(message: message, type: NetworkErrorType.unknown, statusCode: statusCode);
+  UnknownException({super.message = 'An unexpected error occurred. Please try again.', super.statusCode})
+      : super(type: NetworkErrorType.unknown);
 }

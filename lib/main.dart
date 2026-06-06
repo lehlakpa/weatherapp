@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:flutterxlearn/screens/realproject.dart';
 import 'theme/app_theme.dart';
 import './screens/annimation.dart';
 
@@ -12,6 +11,10 @@ void main() {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const MyApp());
 }
 
@@ -21,10 +24,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Weather App',
+      title: 'Flutter X Learn',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
-      home: AnimatedFirebaseText(),
+      home: const AnimatedFirebaseText(),
     );
   }
 }
+
